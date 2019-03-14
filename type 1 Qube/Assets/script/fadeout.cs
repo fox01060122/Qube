@@ -7,7 +7,7 @@ public class fadeout : MonoBehaviour {
     float Fadespeed = 0.02f;//透明度が変わるスピード管理
     float Red, Green, Blue, Alfa;//パネルの色、不透明度を管理
 
-    public bool isfadeout = false;//透明度を変更するパネルイメージ
+    private bool isfadeout = true;//透明度を変更するパネルイメージ
 
     Image Fadeimage;//透明度を変更するパネルのイメージ
 
@@ -24,7 +24,10 @@ public class fadeout : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (isfadeout) Startfadeout();
+        if (isfadeout&& open.fade)
+        {
+            Invoke("Startfadeout", 2f);
+        }
 	}
 
     void Startfadeout()
