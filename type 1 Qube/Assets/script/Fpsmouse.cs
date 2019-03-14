@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class Fpsmouse : MonoBehaviour {
 
-	private float Speed;
+	[SerializeField]private float Speed;
 	private const float Angle_limitup = 90f;
 	private const float Angle_limitdown = -90f;
 
 	// Use this for initialization
 	void Start () {
-		Speed = 2f;
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.anyKey)CmaeraAngle();
 		float angle_x = 180f <= transform.eulerAngles.x ? transform.eulerAngles.x - 360 : transform.eulerAngles.x;//三項演算子
-
 		transform.eulerAngles = new Vector3(Mathf.Clamp(angle_x, Angle_limitdown, Angle_limitup),
 		transform.eulerAngles.y,
 	    transform.eulerAngles.z);
