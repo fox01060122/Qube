@@ -15,7 +15,7 @@ public class Fpsmouse : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.anyKey)CmaeraAngle();
+        if (Input.GetMouseButton(0)) CmaeraAngle();
 		float angle_x = 180f <= transform.eulerAngles.x ? transform.eulerAngles.x - 360 : transform.eulerAngles.x;//三項演算子
 		transform.eulerAngles = new Vector3(Mathf.Clamp(angle_x, Angle_limitdown, Angle_limitup),
 		transform.eulerAngles.y,

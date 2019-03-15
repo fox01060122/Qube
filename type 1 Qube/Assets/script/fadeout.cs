@@ -35,7 +35,7 @@ public class fadeout : MonoBehaviour {
         Fadeimage.enabled = true; //パネルをon
         Alfa += Fadespeed;//不透明度を徐々に上げる
         Setalpha();//変更した透明度をパネルに反映
-        if (Alfa >= 1) isfadeout = false;//完全に不透明になったら処理を抜ける
+        if (Alfa >= 1) isfadeout = false;//完全に不透明になったら処理を抜ける 0か1
 
     }
     void Setalpha()
