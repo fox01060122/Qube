@@ -23,7 +23,7 @@ public class buttonclick : MonoBehaviour
         {
             SearchRoom();//右クリックを押したとき
         }
-        else if(Input.GetMouseButtonDown(1))//エンター押せるクリア押させる
+        if(Input.GetMouseButtonDown(1))//エンター押せるクリア押させる
         {
             Action();
         }
@@ -93,11 +93,11 @@ public class buttonclick : MonoBehaviour
             actioncomand = hittwo.collider.gameObject;
             switch (actioncomand.name)
             {
-                case "Clear":
+                case "Clear":if(count<4 || count == 4)
                     Debug.Log("クリア");
                     count = 0;
                     break;
-                case "Enter":if(count ==4)
+                case "Enter":if(count == 4)
                     Debug.Log("決定");
                     count = 0;
                     break;
